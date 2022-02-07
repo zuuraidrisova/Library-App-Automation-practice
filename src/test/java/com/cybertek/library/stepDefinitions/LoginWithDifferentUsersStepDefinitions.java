@@ -2,6 +2,7 @@ package com.cybertek.library.stepDefinitions;
 
 import com.cybertek.library.pages.HomePage;
 import com.cybertek.library.pages.LoginPage;
+import com.cybertek.library.utilities.BrowserUtils;
 import com.cybertek.library.utilities.ConfigurationReader;
 import com.cybertek.library.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -45,7 +46,7 @@ public class LoginWithDifferentUsersStepDefinitions {
     }
 
     @Then("User should be able to see {string} in the account section")
-    public void user_should_be_able_to_see_in_the_account_section(String username) throws InterruptedException {
+    public void user_should_be_able_to_see_in_the_account_section(String username)  {
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
@@ -67,7 +68,7 @@ public class LoginWithDifferentUsersStepDefinitions {
 
         System.out.println("passed");
 
-        Thread.sleep(1000);
+        BrowserUtils.wait(2);
 
         Driver.closeDriver();
 
